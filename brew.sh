@@ -5,9 +5,9 @@ set -o pipefail
 
 # string formatters
 if [[ -t 1 ]]; then
-    tty_escape() { printf "\033[%sm" "$1"; }
+	tty_escape() { printf "\033[%sm" "$1"; }
 else
-    tty_escape() { :; }
+	tty_escape() { :; }
 fi
 
 tty_mkbold() { tty_escape "1;$1"; }
@@ -20,9 +20,13 @@ printf "\n${tty_yellow}====================Script starts====================${tt
 printf "${tty_green}Installing brew packages...${tty_reset}\n"
 
 brew list fish || brew install fish
+
 brew list go || brew install go
+brew list rust || brew install rust
 
 brew list neovim || brew install neovim
+brew list selene || brew install selene
+brew list shellcheck || brew install shellcheck
 
 brew list gnupg || brew instal gnupg
 brew list pinentry-mac || brew install pinentry-mac
