@@ -25,8 +25,6 @@ brew list go || brew install go
 brew list rust || brew install rust
 
 brew list neovim || brew install neovim
-brew list selene || brew install selene
-brew list shellcheck || brew install shellcheck
 
 brew list gnupg || brew instal gnupg
 brew list pinentry-mac || brew install pinentry-mac
