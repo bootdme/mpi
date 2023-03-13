@@ -34,6 +34,9 @@ brew list exa || brew install exa
 brew list bitwarden || brew install --cask bitwarden
 brew list spotify || brew install --cask spotify
 
+brew list wget || brew install wget
+brew list gdb || brew install gdb
+
 softwareupdate --install-rosetta --agree-to-license
 
 printf "\n${tty_yellow}====================Script ends====================${tty_reset}\n\n"
