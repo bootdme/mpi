@@ -19,6 +19,8 @@ printf "\n${tty_yellow}====================Script starts====================${tt
 
 printf "${tty_green}Installing brew packages...${tty_reset}\n"
 
+xcode-select --install
+
 brew list fish || brew install fish
 
 brew list go || brew install go
@@ -35,7 +37,8 @@ brew list bitwarden || brew install --cask bitwarden
 brew list spotify || brew install --cask spotify
 
 brew list wget || brew install wget
-brew list gdb || brew install gdb
+brew list fd || brew install fd
+brew list ripgrep || brew install ripgrep
 
 softwareupdate --install-rosetta --agree-to-license
 
