@@ -40,8 +40,6 @@ brew list wget || brew install wget
 brew list fd || brew install fd
 brew list ripgrep || brew install ripgrep
 
-brew list test || brew install test
-
 softwareupdate --install-rosetta --agree-to-license
 
 printf "\n${tty_yellow}====================Script ends====================${tty_reset}\n\n"
