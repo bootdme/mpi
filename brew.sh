@@ -24,7 +24,7 @@ xcode-select --install
 brew list fish || brew install fish
 
 brew list go || brew install go
-brew list rust || brew install rust
+brew list rustup-init || brew install rustup-init
 
 brew list neovim || brew install neovim
 
