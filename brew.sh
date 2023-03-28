@@ -31,6 +31,8 @@ brew list neovim || brew install neovim
 brew list gnupg || brew instal gnupg
 brew list pinentry-mac || brew install pinentry-mac
 
+brew list bash || brew install bash
+
 brew list exa || brew install exa
 
 brew list bitwarden || brew install --cask bitwarden
