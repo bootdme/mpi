@@ -3,6 +3,8 @@
 set -e
 set -o pipefail
 
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 # string formatters
 if [[ -t 1 ]]; then
 	tty_escape() { printf "\033[%sm" "$1"; }
@@ -24,7 +26,6 @@ xcode-select --install
 brew list fish || brew install fish
 
 brew list go || brew install go
-brew list rustup-init || brew install rustup-init
 
 brew list neovim || brew install neovim
 
