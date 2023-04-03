@@ -27,6 +27,8 @@ brew list fish || brew install fish
 
 brew list go || brew install go
 
+brew list postgresql || brew install postgresql
+
 brew list neovim || brew install neovim
 
 brew list gnupg || brew instal gnupg
