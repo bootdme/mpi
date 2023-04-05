@@ -41,13 +41,12 @@ brew list bash || brew install bash
 brew list exa || brew install exa
 brew list fzf || brew install fzf
 brew list bat || brew install bat
-
-brew list bitwarden || brew install --cask bitwarden
-brew list spotify || brew install --cask spotify
-
 brew list wget || brew install wget
 brew list fd || brew install fd
 brew list ripgrep || brew install ripgrep
+
+brew list bitwarden || brew install --cask bitwarden
+brew list spotify || brew install --cask spotify
 
 softwareupdate --install-rosetta --agree-to-license
 
