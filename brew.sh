@@ -39,6 +39,7 @@ brew list google-chrome || brew install google-chrome
 brew list bash || brew install bash
 
 brew list exa || brew install exa
+brew list fzf || brew install fzf
 
 brew list bitwarden || brew install --cask bitwarden
 brew list spotify || brew install --cask spotify
