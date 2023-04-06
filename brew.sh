@@ -1,11 +1,11 @@
 #!/bin/bash
 
-set -e
-set -o pipefail
+set -euo pipefail
 
+# Install rustup
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-# string formatters
+# String formatters
 if [[ -t 1 ]]; then
 	tty_escape() { printf "\033[%sm" "$1"; }
 else
@@ -17,9 +17,9 @@ tty_yellow="$(tty_escape "0;33")"
 tty_green="$(tty_mkbold 32)"
 tty_reset="$(tty_escape 0)"
 
-printf "\n${tty_yellow}====================Script starts====================${tty_reset}\n\n"
+printf "\n%s====================Script starts====================%s\n\n" "${tty_yellow}" "${tty_reset}"
 
-printf "${tty_green}Installing brew packages...${tty_reset}\n"
+printf "%sInstalling brew packages...%s\n" "${tty_green}" "${tty_reset}"
 
 xcode-select --install
 
@@ -40,6 +40,7 @@ brew list bash || brew install bash
 
 brew list exa || brew install exa
 brew list fzf || brew install fzf
+$(brew --prefix)/opt/fzf/install
 brew list bat || brew install bat
 brew list wget || brew install wget
 brew list fd || brew install fd
@@ -50,4 +51,4 @@ brew list spotify || brew install --cask spotify
 
 softwareupdate --install-rosetta --agree-to-license
 
-printf "\n${tty_yellow}====================Script ends====================${tty_reset}\n\n"
+printf "\n%s====================Script ends====================%s\n\n" "${tty_yellow}" "${tty_reset}"
