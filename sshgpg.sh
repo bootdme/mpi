@@ -2,17 +2,7 @@
 
 set -euo pipefail
 
-# String formatters
-if [[ -t 1 ]]; then
-	tty_escape() { printf "\033[%sm" "$1"; }
-else
-	tty_escape() { :; }
-fi
-
-tty_mkbold() { tty_escape "1;$1"; }
-tty_yellow="$(tty_escape "0;33")"
-tty_green="$(tty_mkbold 32)"
-tty_reset="$(tty_escape 0)"
+source variables.sh
 
 printf "\n%s====================Script starts====================%s\n\n" "${tty_yellow}" "${tty_reset}"
 
