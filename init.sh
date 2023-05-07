@@ -2,9 +2,6 @@
 
 set -euo pipefail
 
-# Xcode
-xcode-select --install
-
 # Rosetta
 softwareupdate --install-rosetta --agree-to-license
 
