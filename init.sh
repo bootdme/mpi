@@ -5,5 +5,11 @@ set -euo pipefail
 # Xcode
 xcode-select --install
 
-# Install rustup
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# Rosetta
+softwareupdate --install-rosetta --agree-to-license
+
+# Download dotfiles
+git clone https://github.com/bootdme/dotfiles.git
+cd dotfiles && ./install
+
+chsh -s $(/opt/homebrew/bin/fish)
