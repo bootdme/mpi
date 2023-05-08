@@ -1,5 +1,7 @@
 #!/bin/bash 
 
+source variables.sh
+
 set -euo pipefail
 
 # https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54

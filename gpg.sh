@@ -6,6 +6,12 @@ source variables.sh
 
 printf "\n%s====================Script starts====================%s\n\n" "${tty_yellow}" "${tty_reset}"
 
+echo "Enter your email for Github: "
+read EMAIL
+
+echo "Enter your Github personal token: "
+read GITHUB_TOKEN
+
 	if [ ! -d ~/.gnupg ]; then
 		printf "%sCreating GPG key pair for GitHub...%s\n" "${tty_green}" "${tty_reset}"
 
@@ -17,8 +23,10 @@ printf "\n%s====================Script starts====================%s\n\n" "${tty_
 
 			gpgconf --kill gpg-agent
 		fi
+
+		gpg --armor --export "$EMAIL" | curl -H "Authorization: token $GITHUB_TOKEN" -X POST -d "{\"armored_public_key\":\"$(awk '{printf "%s\\n", $0}' ORS='')\"}" https://api.github.com/user/gpg_keys
 	fi
 
-printf "%sKeys have been added to your system. Make sure to add them to GitHub%s\n" "${tty_green}" "${tty_reset}"
+printf "%sKeys have been added to GitHub%s\n" "${tty_green}" "${tty_reset}"
 
 printf "\n%s====================Script ends====================%s\n\n" "${tty_yellow}" "${tty_reset}"
