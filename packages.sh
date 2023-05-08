@@ -8,6 +8,9 @@ sudo sh -c 'if [[ $(tail -n 1 "/etc/shells") != "/opt/homebrew/bin/fish" ]]; the
 # Install rustup
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+# Install NVM
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+
 $(brew --prefix)/opt/fzf/install
 
 echo "Run gpg.sh"
