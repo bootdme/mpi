@@ -12,3 +12,5 @@ softwareupdate --install-rosetta --agree-to-license
 (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/bootdme/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 source ~/.zprofile
+
+echo "Quit the terminal and run ./ssh"

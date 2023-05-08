@@ -25,3 +25,5 @@ echo "Please enter your Github Personal token: "
 read GITHUB_TOKEN
 
 curl -H "Authorization: token $GITHUB_TOKEN" -X POST -d "{\"title\":\"MacKey\",\"key\":\"$(cat ~/.ssh/id_ed25519.pub)\"}" https://api.github.com/user/keys
+
+echo "Run dots.sh"
