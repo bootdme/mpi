@@ -6,7 +6,6 @@ source variables.sh
 
 printf "\n%s====================Script starts====================%s\n\n" "${tty_yellow}" "${tty_reset}"
 
-if [ ! -d ~/.ssh ] || [ ! -d ~/.gnupg ]; then
 	if [ ! -d ~/.gnupg ]; then
 		printf "%sCreating GPG key pair for GitHub...%s\n" "${tty_green}" "${tty_reset}"
 
@@ -19,7 +18,6 @@ if [ ! -d ~/.ssh ] || [ ! -d ~/.gnupg ]; then
 			gpgconf --kill gpg-agent
 		fi
 	fi
-fi
 
 printf "%sKeys have been added to your system. Make sure to add them to GitHub%s\n" "${tty_green}" "${tty_reset}"
 
