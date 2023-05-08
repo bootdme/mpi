@@ -5,7 +5,6 @@ set -euo pipefail
 # Rosetta
 softwareupdate --install-rosetta --agree-to-license
 
-<<<<<<< HEAD
 # Install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/bootdme/.zprofile
@@ -35,10 +34,9 @@ echo "Please enter your Github Personal token: "
 read GITHUB_TOKEN
 
 curl -H "Authorization: token $GITHUB_TOKEN" -X POST -d "{\"title\":\"MacKey\",\"key\":\"$(cat ~/.ssh/id_ed25519.pub)\"}" https://api.github.com/user/keys
-=======
+
 # Install distro for dotbot
 pip3 install distro
->>>>>>> 4d9c41af198b4c2b9f158a616043b3730a80ea6b
 
 # Download dotfiles
 git clone https://github.com/bootdme/dotfiles.git
