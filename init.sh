@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source variables.sh
+
 set -euo pipefail
 
 # Rosetta
@@ -35,11 +37,13 @@ read GITHUB_TOKEN
 
 curl -H "Authorization: token $GITHUB_TOKEN" -X POST -d "{\"title\":\"MacKey\",\"key\":\"$(cat ~/.ssh/id_ed25519.pub)\"}" https://api.github.com/user/keys
 
+/Library/Developer/CommandLineTools/usr/bin/python3 -m pip install --upgrade pip
+
 # Install distro for dotbot
 pip3 install distro
 
 # Download dotfiles
 git clone https://github.com/bootdme/dotfiles.git
-cd ~/dotfiles && ./install
+cd dotfiles/ && ./install
 
 chsh -s $(/opt/homebrew/bin/fish)
