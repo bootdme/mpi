@@ -1,8 +1,10 @@
-#!/bin/bash 
+#!/bin/bash
 
 source variables.sh
 
 set -euo pipefail
+
+printf "\n%s====================Script starts====================%s\n\n" "${tty_yellow}" "${tty_reset}"
 
 # https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54
 if [ ! -d ~/.ssh ] || [ ! -f ~/.ssh/id_ed25519 ]; then
@@ -23,9 +25,10 @@ EOT
 	ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 fi
 
-echo "Please enter your Github Personal token: "
-read GITHUB_TOKEN
+read -rp "${tty_green}Please enter your Github Personal token: ${tty_reset}" GITHUB_TOKEN
 
 curl -H "Authorization: token $GITHUB_TOKEN" -X POST -d "{\"title\":\"MacKey\",\"key\":\"$(cat ~/.ssh/id_ed25519.pub)\"}" https://api.github.com/user/keys
 
-echo "Run dots.sh"
+printf "%sRun ./dots.sh%s\n\n" "${tty_green}" "${tty_reset}"
+
+printf "\n%s====================Script ends====================%s\n\n" "${tty_yellow}" "${tty_reset}"
