@@ -7,25 +7,6 @@ source variables.sh
 printf "\n%s====================Script starts====================%s\n\n" "${tty_yellow}" "${tty_reset}"
 
 if [ ! -d ~/.ssh ] || [ ! -d ~/.gnupg ]; then
-	# https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54
-	if [ ! -d ~/.ssh ]; then
-		printf "%sCreating SSH key pair for GitHub...%s\n\n" "${tty_green}" "${tty_reset}"
-
-		read -rp "${tty_green}Please enter the email you use for GitHub: ${tty_reset}" EMAIL
-
-		ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "$EMAIL"
-		eval "$(ssh-agent -s)"
-
-		cat <<EOT >>~/.ssh/config
-Host *
-    AddKeysToAgent yes
-    UseKeychain yes
-    IdentityFile ~/.ssh/id_ed25519
-EOT
-
-		ssh-add --apple-use-keychain ~/.ssh/id_ed25519
-	fi
-
 	if [ ! -d ~/.gnupg ]; then
 		printf "%sCreating GPG key pair for GitHub...%s\n" "${tty_green}" "${tty_reset}"
 
