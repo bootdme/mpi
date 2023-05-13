@@ -29,6 +29,7 @@ remove_file_or_directory "$HOME/.zsh_history"
 remove_file_or_directory "$HOME/.zshenv"
 remove_file_or_directory "$HOME/.zshrc"
 remove_file_or_directory "$HOME/.zsh_sessions"
+remove_file_or_directory "$HOME/.zcompdump"
 
 remove_file_or_directory "$HOME/.bashrc"
 remove_file_or_directory "$HOME/.bash_history"
