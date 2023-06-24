@@ -41,4 +41,6 @@ remove_file_or_directory "$HOME/.viminfo"
 remove_file_or_directory "$HOME/.fzf.bash"
 remove_file_or_directory "$HOME/.fzf.zsh"
 
+remove_file_or_directory "$HOME/.wget-hsts"
+
 printf "\n%s====================Script ends====================%s\n\n" "${tty_yellow}" "${tty_reset}"
