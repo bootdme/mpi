@@ -25,6 +25,6 @@ if [ ! -d ~/.gnupg ]; then
 fi
 
 printf "%sKeys have been added to GitHub%s\n" "${tty_green}" "${tty_reset}"
-printf "%sExecute chsh -s $(which fish), close and re-open terminal and then run ./cleanup.sh%s\n" "${tty_green}" "${tty_reset}"
+printf "%sExecute chsh -s $(which nu), close and re-open terminal and then run ./cleanup.sh%s\n" "${tty_green}" "${tty_reset}"
 
 printf "\n%s====================Script ends====================%s\n\n" "${tty_yellow}" "${tty_reset}"

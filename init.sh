@@ -18,6 +18,9 @@ softwareupdate --install-rosetta --agree-to-license
 eval "$(/opt/homebrew/bin/brew shellenv)"
 source ~/.zprofile
 
+# Install rustup
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 printf "%s Completely quit the terminal with Command + Q and run ./ssh%s\n\n" "${tty_green}" "${tty_reset}"
 
 printf "\n%s====================Script ends====================%s\n\n" "${tty_yellow}" "${tty_reset}"
