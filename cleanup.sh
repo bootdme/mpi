@@ -43,4 +43,6 @@ remove_file_or_directory "$HOME/.fzf.zsh"
 
 remove_file_or_directory "$HOME/.wget-hsts"
 
+remove_file_or_directory "$HOME/Documents/.localized"
+
 printf "\n%s====================Script ends====================%s\n\n" "${tty_yellow}" "${tty_reset}"
