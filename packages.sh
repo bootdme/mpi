@@ -14,10 +14,6 @@ sudo sh -c 'if [[ $(tail -n 1 "/etc/shells") != "/opt/homebrew/bin/fish" ]]; the
 # Add nu to /etc/shells
 sudo sh -c 'if [[ $(tail -n 1 "/etc/shells") != "$HOME/.cargo/bin/nu" ]]; then echo "$HOME/.cargo/bin/nu" >> /etc/shells; fi'
 
-$(brew --prefix)/opt/fzf/install
-
-wget https://raw.githubusercontent.com/arkenfox/user.js/master/user.js
-
 printf "%sRun ./gpg.sh%s\n" "${tty_green}" "${tty_reset}"
 
 printf "\n%s====================Script ends====================%s\n\n" "${tty_yellow}" "${tty_reset}"

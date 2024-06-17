@@ -37,6 +37,7 @@ remove_file_or_directory "$HOME/.bashdb_hist"
 remove_file_or_directory "$HOME/.profile"
 
 remove_file_or_directory "$HOME/.viminfo"
+remove_file_or_directory "$HOME/.vim"
 
 remove_file_or_directory "$HOME/.fzf.bash"
 remove_file_or_directory "$HOME/.fzf.zsh"
