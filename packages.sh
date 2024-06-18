@@ -8,11 +8,18 @@ printf "\n%s====================Script starts====================%s\n\n" "${tty_
 
 printf "%sInstalling other packages...%s\n" "${tty_green}" "${tty_reset}"
 
-# Add fish to /etc/shells
-sudo sh -c 'if [[ $(tail -n 1 "/etc/shells") != "/opt/homebrew/bin/fish" ]]; then echo "/opt/homebrew/bin/fish" >> /etc/shells; fi'
+# Add fish to /etc/shells if not already present
+sudo sh -c 'if ! grep -q "/opt/homebrew/bin/fish" "/etc/shells"; then echo "/opt/homebrew/bin/fish" >> /etc/shells; fi'
 
-# Add nu to /etc/shells
-sudo sh -c 'if [[ $(tail -n 1 "/etc/shells") != "$HOME/.cargo/bin/nu" ]]; then echo "$HOME/.cargo/bin/nu" >> /etc/shells; fi'
+# Add nu to /etc/shells if not already present
+sudo sh -c 'if ! grep -q "$HOME/.cargo/bin/nu" "/etc/shells"; then echo "$HOME/.cargo/bin/nu" >> /etc/shells; fi'
+
+# Turn on Firewall and block all incoming connections
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setblockall on
+
+# Disable remote management
+sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -deactivate
 
 printf "%sRun ./gpg.sh%s\n" "${tty_green}" "${tty_reset}"
 
