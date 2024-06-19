@@ -21,6 +21,15 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setblockall on
 # Disable remote management
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -deactivate
 
+# Enable tap to click
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+
+# Enable hiding and showing dock
+defaults write com.apple.dock autohide -bool true
+
+defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
+
 printf "%sRun ./gpg.sh%s\n" "${tty_green}" "${tty_reset}"
 
 printf "\n%s====================Script ends====================%s\n\n" "${tty_yellow}" "${tty_reset}"

@@ -6,7 +6,7 @@ set -euo pipefail
 
 printf "\n%s====================Script starts====================%s\n\n" "${tty_yellow}" "${tty_reset}"
 
-xcode-select
+# xcode-select
 
 # Rosetta
 softwareupdate --install-rosetta --agree-to-license
