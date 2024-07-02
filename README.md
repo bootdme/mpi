@@ -1,6 +1,6 @@
 # MacOS Post Installation Scripts
 
-Installation scripts for a fresh M1 macOS
+Installation scripts for my fresh M1 Macbook Air
 
 ## Steps
 
@@ -13,7 +13,7 @@ Installation scripts for a fresh M1 macOS
     - Clones [dotfiles](https://github.com/bootdme/dotfiles) to `~/`.
     - Go into `~/dotfiles` and `./install`.
     - NOTE: Installation will fail first try. Run `./install` again.
-    - Installs brew packages and links nvim, fish, kitty, and git configs.
+    - Installs brew packages and links nvim, kitty, nushell, and git configs.
 4. `./packages.sh`
     - Installs rustup and nvm.
 5. `./gpg.sh`

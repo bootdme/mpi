@@ -16,7 +16,7 @@ pip3 install distro
 # Download dotfiles
 git clone https://github.com/bootdme/dotfiles.git ~/dotfiles
 
-# nushell error fix for symlink
+# Nushell error fix for symlink
 if [ ! -d "~/Library/Application Support/nushell" ]; then
 	mkdir -p "~/Library/Application Support/nushell"
 fi

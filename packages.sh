@@ -2,8 +2,6 @@
 
 source variables.sh
 
-set -euo pipefail
-
 printf "\n%s====================Script starts====================%s\n\n" "${tty_yellow}" "${tty_reset}"
 
 printf "%sInstalling other packages...%s\n" "${tty_green}" "${tty_reset}"
@@ -19,14 +17,38 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setblockall on
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -deactivate
 
 # Enable tap to click
-defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+sudo defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 
 # Enable hiding and showing dock
-defaults write com.apple.dock autohide -bool true
+sudo defaults write com.apple.dock autohide -bool true
 
-defaults write NSGlobalDomain KeyRepeat -int 2
-defaults write NSGlobalDomain InitialKeyRepeat -int 15
+# Change key repeat speed and motion
+sudo defaults write NSGlobalDomain KeyRepeat -int 2
+sudo defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
+# Enable automatic macOS updates
+sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticCheckEnabled -boolean TRUE
+sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticDownload -boolean TRUE
+sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate ConfigDataInstall -boolean TRUE
+sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate CriticalUpdateInstall -boolean TRUE
+sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticallyInstallMacOSUpdates -boolean TRUE
+
+# Enable automatic application updates from the App Store
+sudo defaults write /Library/Preferences/com.apple.commerce AutoUpdate -boolean TRUE
+
+# Disable Siri
+sudo defaults write com.apple.assistant.support "Assistant Enabled" -bool false
+sudo defaults write com.apple.Siri "Siri Data Sharing Opt-In Status" -int 2
+sudo defaults write com.apple.Siri "Siri Enabled" -bool false
+sudo defaults write com.apple.SetupAssistant "DidSeeSiriSetup" -bool True
+sudo defaults write com.apple.Siri "UserHasDeclinedEnable" -bool True
+sudo defaults write com.apple.systemuiserver "NSStatusItem Visible Siri" -bool false
+sudo defaults write com.apple.systemuiserver "menuExtras" -array-remove "/System/Library/CoreServices/Menu Extras/Siri.menu"
+
+# Restart affected services
+killall SystemUIServer
+
+printf "%sRun fnm install --lts for nvm. Then...%s\n" "${tty_green}" "${tty_reset}"
 printf "%sRun ./gpg.sh%s\n" "${tty_green}" "${tty_reset}"
 
 printf "\n%s====================Script ends====================%s\n\n" "${tty_yellow}" "${tty_reset}"
