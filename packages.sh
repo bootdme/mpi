@@ -54,6 +54,7 @@ defaults write com.apple.universalaccess reduceMotion -bool true
 # Restart affected services to apply changes
 killall Dock
 
+# Dock speed
 defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
 defaults write -g NSScrollAnimationEnabled -bool false
 defaults write -g NSWindowResizeTime -float 0.001
