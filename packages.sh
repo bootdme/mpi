@@ -6,9 +6,6 @@ printf "\n%s====================Script starts====================%s\n\n" "${tty_
 
 printf "%sInstalling other packages...%s\n" "${tty_green}" "${tty_reset}"
 
-# Add nu to /etc/shells if not already present
-sudo sh -c 'if ! grep -q "$HOME/.cargo/bin/nu" "/etc/shells"; then echo "$HOME/.cargo/bin/nu" >> /etc/shells; fi'
-
 # Turn on Firewall and block all incoming connections
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setblockall on
