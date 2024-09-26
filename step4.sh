@@ -4,7 +4,7 @@ source variables.sh
 
 printf "\n%s====================Script starts====================%s\n\n" "${tty_yellow}" "${tty_reset}"
 
-printf "%sInstalling other packages...%s\n" "${tty_green}" "${tty_reset}"
+printf "%sConfiguring MacOS...%s\n" "${tty_green}" "${tty_reset}"
 
 # Turn on Firewall and block all incoming connections
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
@@ -69,8 +69,5 @@ defaults write com.apple.dock springboard-page-duration -float 0
 defaults write com.apple.finder DisableAllAnimations -bool true
 defaults write com.apple.Mail DisableSendAnimations -bool true
 defaults write com.apple.Mail DisableReplyAnimations -bool true
-
-printf "%sRun fnm install --lts for nvm. Then...%s\n" "${tty_green}" "${tty_reset}"
-printf "%sRun ./gpg.sh%s\n" "${tty_green}" "${tty_reset}"
 
 printf "\n%s====================Script ends====================%s\n\n" "${tty_yellow}" "${tty_reset}"
