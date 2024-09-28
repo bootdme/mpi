@@ -4,7 +4,7 @@ source variables.sh
 
 set -euo pipefail
 
-printf "\n%s====================Script starts====================%s\n\n" "${tty_yellow}" "${tty_reset}"
+printf "\n%s==================== Script starts ====================%s\n\n" "${tty_yellow}" "${tty_reset}"
 
 xcode-select
 
@@ -36,6 +36,4 @@ if [ ! -d "$HOME/Library/Application Support/nushell" ]; then
 	mkdir -p "$HOME/Library/Application Support/nushell"
 fi
 
-printf "%s Completely quit the terminal with Command + Q, then proceed with step2.sh%s\n\n" "${tty_green}" "${tty_reset}"
-
-printf "\n%s====================Script ends====================%s\n\n" "${tty_yellow}" "${tty_reset}"
+printf "\n%s==================== Script ends ====================%s\n\n" "${tty_yellow}" "${tty_reset}"

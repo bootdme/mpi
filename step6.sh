@@ -22,7 +22,7 @@ remove_file_or_directory() {
 	fi
 }
 
-printf "\n%s====================Script starts====================%s\n\n" "${tty_yellow}" "${tty_reset}"
+printf "\n%s==================== Cleanup script starts ====================%s\n\n" "${tty_yellow}" "${tty_reset}"
 
 remove_file_or_directory "$HOME/.zprofile"
 remove_file_or_directory "$HOME/.zsh_history"
@@ -46,4 +46,4 @@ remove_file_or_directory "$HOME/.wget-hsts"
 
 remove_file_or_directory "$HOME/Documents/.localized"
 
-printf "\n%s====================Script ends====================%s\n\n" "${tty_yellow}" "${tty_reset}"
+printf "\n%s==================== Cleanup script ends ====================%s\n\n" "${tty_yellow}" "${tty_reset}"

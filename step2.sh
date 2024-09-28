@@ -4,7 +4,7 @@ source variables.sh
 
 set -euo pipefail
 
-printf "\n%s==================== Script starts ====================%s\n\n" "${tty_yellow}" "${tty_reset}"
+printf "\n%s==================== SSH Import Keys Script starts ====================%s\n\n" "${tty_yellow}" "${tty_reset}"
 
 create_ssh_key() {
 	local email=$1
@@ -112,4 +112,4 @@ while true; do
 	esac
 done
 
-printf "\n%s==================== Script ends ====================%s\n\n" "${tty_yellow}" "${tty_reset}"
+printf "\n%s==================== SSH Import Keys Script ends ====================%s\n\n" "${tty_yellow}" "${tty_reset}"

@@ -2,7 +2,7 @@
 
 source variables.sh
 
-printf "\n%s====================Script starts====================%s\n\n" "${tty_yellow}" "${tty_reset}"
+printf "\n%s==================== Script starts ====================%s\n\n" "${tty_yellow}" "${tty_reset}"
 
 printf "%sConfiguring MacOS...%s\n" "${tty_green}" "${tty_reset}"
 
@@ -70,4 +70,4 @@ defaults write com.apple.finder DisableAllAnimations -bool true
 defaults write com.apple.Mail DisableSendAnimations -bool true
 defaults write com.apple.Mail DisableReplyAnimations -bool true
 
-printf "\n%s====================Script ends====================%s\n\n" "${tty_yellow}" "${tty_reset}"
+printf "\n%s==================== Script ends ====================%s\n\n" "${tty_yellow}" "${tty_reset}"
