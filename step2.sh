@@ -33,7 +33,7 @@ Host $name
 EOT
 
 		ssh-add --apple-use-keychain "$key_file"
-		return 0 # Indicate success
+		return 0
 	fi
 }
 
