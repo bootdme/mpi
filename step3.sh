@@ -9,6 +9,9 @@ printf "\n%s====================Script starts====================%s\n\n" "${tty_
 read -rp "${tty_green}Enter your email for Github: ${tty_reset}" EMAIL
 read -rp "${tty_green}Enter your Github personal token: ${tty_reset}" GITHUB_TOKEN
 
+brew install gnupg
+brew install pinentry-mac
+
 if [ ! -d ~/.gnupg ]; then
 	printf "%sCreating GPG key pair for GitHub...%s\n" "${tty_green}" "${tty_reset}"
 
