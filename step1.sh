@@ -25,7 +25,6 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # Add nu to /etc/shells if not already present
 sudo sh -c 'if ! grep -q "$HOME/.cargo/bin/nu" "/etc/shells"; then echo "$HOME/.cargo/bin/nu" >> /etc/shells; fi'
-sudo sh -c 'if ! grep -q "/opt/homebrew/bin/nu" "/etc/shells"; then echo "/opt/homebrew/bin/nu" >> /etc/shells; fi'
 
 /Library/Developer/CommandLineTools/usr/bin/python3 -m pip install --upgrade pip
 

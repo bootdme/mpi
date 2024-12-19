@@ -34,6 +34,8 @@ remove_file_or_directory "$HOME/.zcompdump"
 remove_file_or_directory "$HOME/.viminfo"
 remove_file_or_directory "$HOME/.vim"
 
+remove_file_or_directory "$HOME/.bash_history"
+
 remove_file_or_directory "$HOME/.fzf.bash"
 remove_file_or_directory "$HOME/.fzf.zsh"
 
