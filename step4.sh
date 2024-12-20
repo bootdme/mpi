@@ -73,6 +73,9 @@ defaults write com.apple.Mail DisableReplyAnimations -bool true
 cd macos_hardening/
 ./puppy.sh -H
 
+cd ~/Documents/mpi/
+./privacy-script.sh
+
 printf "%sNOTE: Some configurations will be enabled after restart%s\n" "${tty_green}" "${tty_reset}"
 
 printf "\n%s==================== macOS System Configuration and Optimization Script ends ====================%s\n\n" "${tty_yellow}" "${tty_reset}"
