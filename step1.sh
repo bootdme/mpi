@@ -2,11 +2,10 @@
 
 source variables.sh
 
-set -euo pipefail
+printf "\n%s==================== MacOS Development Environment Setup script starts ====================%s\n\n" "$tty_yellow" "$tty_reset"
 
-printf "\n%s==================== Script starts ====================%s\n\n" "$tty_yellow" "$tty_reset"
-
-# xcode-select --install
+# Xcode developer tools. May or may not run depending
+xcode-select --install
 
 # Rosetta
 softwareupdate --install-rosetta --agree-to-license
@@ -36,4 +35,6 @@ if [ ! -d "$HOME/Library/Application Support/nushell" ]; then
 	mkdir -p "$HOME/Library/Application Support/nushell"
 fi
 
-printf "\n%s==================== Script ends ====================%s\n\n" "$tty_yellow" "$tty_reset"
+printf "%sNOTE: Close terminal and run the next step%s\n" "${tty_green}" "${tty_reset}"
+
+printf "\n%s==================== MacOS Development Environment Setup script ends ====================%s\n\n" "$tty_yellow" "$tty_reset"

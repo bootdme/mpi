@@ -4,7 +4,7 @@ source variables.sh
 
 set -euo pipefail
 
-printf "\n%s==================== SSH Import Keys Script starts ====================%s\n\n" "${tty_yellow}" "${tty_reset}"
+printf "\n%s==================== SSH Import Keys script starts ====================%s\n\n" "${tty_yellow}" "${tty_reset}"
 
 create_ssh_key() {
 	local email=$1
@@ -15,7 +15,7 @@ create_ssh_key() {
 	if [ -f "$key_file" ]; then
 		printf "%sSSH key pair for %s (%s) already exists as %s.%s\n\n" \
 			"${tty_yellow}" "$service" "$email" "$name" "${tty_reset}"
-		return 1 # Indicate that the key already exists
+		return 1
 	else
 		printf "%sCreating SSH key pair for %s (%s) named %s...%s\n\n" \
 			"${tty_green}" "$service" "$email" "$name" "${tty_reset}"
@@ -112,4 +112,4 @@ while true; do
 	esac
 done
 
-printf "\n%s==================== SSH Import Keys Script ends ====================%s\n\n" "${tty_yellow}" "${tty_reset}"
+printf "\n%s==================== SSH Import Keys script ends ====================%s\n\n" "${tty_yellow}" "${tty_reset}"

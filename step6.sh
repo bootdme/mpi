@@ -4,7 +4,6 @@ set -euo pipefail
 
 source variables.sh
 
-# Function to remove a file or directory
 remove_file_or_directory() {
 	local file_or_directory="$1"
 	if [ -e "$file_or_directory" ]; then

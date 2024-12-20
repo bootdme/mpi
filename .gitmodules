@@ -1,0 +1,3 @@
+[submodule "macos_hardening"]
+	path = macos_hardening
+	url = https://github.com/ataumo/macos_hardening

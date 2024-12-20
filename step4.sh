@@ -2,7 +2,7 @@
 
 source variables.sh
 
-printf "\n%s==================== Script starts ====================%s\n\n" "${tty_yellow}" "${tty_reset}"
+printf "\n%s==================== macOS System Configuration and Optimization Script starts ====================%s\n\n" "${tty_yellow}" "${tty_reset}"
 
 printf "%sConfiguring MacOS...%s\n" "${tty_green}" "${tty_reset}"
 
@@ -21,7 +21,7 @@ sudo defaults write com.apple.dock autohide -bool true
 
 # Change key repeat speed and motion
 sudo defaults write NSGlobalDomain KeyRepeat -int 2
-sudo defaults write NSGlobalDomain InitialKeyRepeat -int 15
+sudo defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 # Enable automatic macOS updates
 sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticCheckEnabled -boolean TRUE
@@ -70,4 +70,9 @@ defaults write com.apple.finder DisableAllAnimations -bool true
 defaults write com.apple.Mail DisableSendAnimations -bool true
 defaults write com.apple.Mail DisableReplyAnimations -bool true
 
-printf "\n%s==================== Script ends ====================%s\n\n" "${tty_yellow}" "${tty_reset}"
+cd macos_hardening/
+./puppy.sh -H
+
+printf "%sNOTE: Some configurations will be enabled after restart%s\n" "${tty_green}" "${tty_reset}"
+
+printf "\n%s==================== macOS System Configuration and Optimization Script ends ====================%s\n\n" "${tty_yellow}" "${tty_reset}"
