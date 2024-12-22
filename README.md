@@ -52,7 +52,7 @@ Tools installed:
 
 Run: `./step4.sh` 
 
-Configures macOS for better security and developer experience. It also applies security enhancements using [macos_hardening](https://github.com/ataumo/macos_hardening).
+Configures macOS for better security and developer experience. It also applies security enhancements using [macos_hardening](https://github.com/ataumo/macos_hardening) and [privacy.sexy](https://privacy.sexy/).
 
 ### 5. **Install Dotfiles and Tools**
 
